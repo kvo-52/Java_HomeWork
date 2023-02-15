@@ -3,7 +3,7 @@
 // многочлена многочлен степени k.
 // *Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
-public class mnogochelen {
+public class Lec02_mnogochelen {
     public static void main(String[] args) {
         
     }

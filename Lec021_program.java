@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class program {
+public class Lec021_program {
 public static void main(String[] args) {
 Scanner iScanner = new Scanner(System.in);
 System.out.printf("name: ");

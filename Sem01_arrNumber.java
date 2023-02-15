@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // дан массив чисел, нужно сформировать новую выборку 
 // из только четных чисел
-public class arrNumber {
+public class Sem01_arrNumber {
     private static Random random = new Random();
     private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
