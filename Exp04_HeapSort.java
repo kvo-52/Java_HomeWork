@@ -21,7 +21,7 @@ public class Exp04_HeapSort {
     }
     return array;
     }
-//сортировка
+//пирамидальная сортировка 
     public void sort(int arr[])
     {
         int n = arr.length;
