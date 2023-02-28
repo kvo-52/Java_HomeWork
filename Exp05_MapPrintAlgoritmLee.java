@@ -7,10 +7,10 @@ public class Exp05_MapPrintAlgoritmLee {
         int col = questionForUser("Введите длину: ") + 2;
         int row = questionForUser("Введите ширину: ") + 2;
 
-        int[][] battlefield = new int[row][col];
-        generationMap(battlefield, col, row);
-        addWall(battlefield, col, row);
-        printMap(battlefield, col, row);
+        int[][] adventureMap = new int[row][col];
+        generationMap(adventureMap, col, row);
+        addWall(adventureMap, col, row);
+        printMap(adventureMap, col, row);
         
 
     }
