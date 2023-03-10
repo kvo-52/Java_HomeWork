@@ -2,12 +2,12 @@ package Exp06_LeePath;
 
 import java.util.Random;
 
-public class Field {
+public class CreateField {
     private static int[][] fieldMap; // Поле
     private static int[] fieldSize = new int[2]; // Столбцы, строки
     private static int[] points = new int[4]; // Координаты начала и конца
     private static int filling = 4; // Вероятность постройки стены (1:filling)
-    public Field(int column, int row) {
+    public CreateField(int column, int row) {
         fieldSize[0] = column;
         fieldSize[1] = row;
         fieldMap = new int[column][row];

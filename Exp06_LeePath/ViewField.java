@@ -14,8 +14,8 @@ public class ViewField extends JComponent{
     private static int wW = ratio * (horizon[1] + 2); // Ширина окна
     private static int hW = ratio * (horizon[0] + 2); // Высота окна
     
-    public static Field lab = new Field(horizon[0], horizon[1]); // Сгенерированный "лабиринт"
-    public static AlgoritmLee lab2 = new AlgoritmLee(lab.getMapSize()); // Волновой алгоритм
+    public static CreateField f = new CreateField(horizon[0], horizon[1]); // Создание(генерация) лабиринта
+    public static AlgoritmLee f2 = new AlgoritmLee(f.getMapSize()); // Волновой алгоритм
     
     private static Color exit = new Color(0, 0, 255, 200); // Выход
     private static Color way = new Color(0, 255, 0, 150); // Путь
@@ -46,7 +46,7 @@ public class ViewField extends JComponent{
         ender.setColor(wall);
         for (int i = 0; i < horizon[0]; i ++) {
             for (int j = 0; j < horizon[1]; j ++) {
-                if (lab.getMap()[i][j] == -1) {
+                if (f.getMap()[i][j] == -1) {
                     int x = (i+1) * ratio;
                     int y = (j+1) * ratio;
                     ender.fillRect(y, x, ratio, ratio);
@@ -58,7 +58,7 @@ public class ViewField extends JComponent{
         ender.setColor(way);
         for (int i = 0; i < horizon[0]; i ++) {
             for (int j = 0; j < horizon[1]; j ++) {
-                if (lab2.getPath()[i][j] == 1) {
+                if (f2.getPath()[i][j] == 1) {
                     int x = (i+1) * ratio;
                     int y = (j+1) * ratio;
                     ender.fillRect(y, x, ratio, ratio);
@@ -68,23 +68,23 @@ public class ViewField extends JComponent{
 
         // Отрисовка котейки (начало)
         ender.setColor(cat);
-        ender.fillRect(((lab.getPoints()[1]+1) * ratio), ((lab.getPoints()[0]+1) * ratio), ratio, ratio);
+        ender.fillRect(((f.getPoints()[1]+1) * ratio), ((f.getPoints()[0]+1) * ratio), ratio, ratio);
         // Отрисовка выхода (конец)
         ender.setColor(exit);
-        ender.fillRect(((lab.getPoints()[3]+1) * ratio), ((lab.getPoints()[2]+1) * ratio), ratio, ratio);
+        ender.fillRect(((f.getPoints()[3]+1) * ratio), ((f.getPoints()[2]+1) * ratio), ratio, ratio);
 
         // Нанесение возможных ходов
         ender.setColor(Color.BLACK);
         ender.setFont(monoFont);
         for (int i = 0; i < horizon[0]; i ++) {
             for (int j = 0; j < horizon[1]; j ++) {
-                if (lab2.getMapLi()[i][j] != -1) {
-                    String ff = String.format("%d", lab2.getMapLi()[i][j]);
+                if (f2.getMapLi()[i][j] != -1) {
+                    String ff = String.format("%d", f2.getMapLi()[i][j]);
                     int w = fstr.stringWidth(ff);
                     int h = fstr.getAscent() >> 2;
                     int x = (i+1) * ratio + fontSize + h;
                     int y = (j+1) * ratio + fontSize - w;
-                    ender.drawString(String.format("%d", lab2.getMapLi()[i][j]), y, x);
+                    ender.drawString(String.format("%d", f2.getMapLi()[i][j]), y, x);
                 }
             }
         }

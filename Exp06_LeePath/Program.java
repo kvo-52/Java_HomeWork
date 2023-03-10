@@ -5,7 +5,8 @@ import javax.swing.WindowConstants;
 
 public class Program {
     public static void main(String[] args) {
-        Field f = new Field(0, 0);
+      
+        CreateField f = new CreateField(10, 10);
         f.generationWall(); // Генерация стен
         f.generationPoints(); // Генерация старт/финиш
         AlgoritmLee f2=new AlgoritmLee(f.getMapSize());
