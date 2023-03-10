@@ -5,8 +5,11 @@ import javax.swing.WindowConstants;
 
 public class Program {
     public static void main(String[] args) {
+        System.out.println("Задайте размер поля");
+        int col = QuestionForUser.questionForUser("Введите число: ");
+        int row = QuestionForUser.questionForUser("Введите число: ");
       
-        CreateField f = new CreateField(10, 10);
+        CreateField f = new CreateField(col,row);
         f.generationWall(); // Генерация стен
         f.generationPoints(); // Генерация старт/финиш
         AlgoritmLee f2=new AlgoritmLee(f.getMapSize());

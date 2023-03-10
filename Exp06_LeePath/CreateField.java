@@ -21,7 +21,7 @@ public class CreateField {
     public int[] getPoints () { return points;}
 
     // Генерация координат начала и конца
-    public void generationPoints() throws IllegalArgumentException{
+    public void generationPoints() {
         Random rand = new Random();
 
         boolean exit_v = rand.nextBoolean();
